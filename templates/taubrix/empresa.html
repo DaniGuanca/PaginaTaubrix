@@ -1,10 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">Nuestro Equipo</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">Somos unos gatos que se juntaron y estan en nose ksad dskfdslksdf fdsf sd
+          fdsfdsfds jfjdsk fjsdkj sdjkf sdfkjkds ssd jf dksjfkds a topo le gusta RR</h5>
+        </div>
+        <br><br>
+      </div>
+    </div>
+    <div class="parallax"><img  class="imgEmp" src="{% static 'taubrix/imagenes/background14.jpg' %}" alt="Unsplashed background img 1"></div>
+  </div>
 
-</body>
-</html>
+
+    <!-- LOS INTEGRANTES -->
+     <div class="container">
+        <div class="section">
+           <div class="row">
+           {% for integrante in lista_integrantes %}
+               <ul>
+                  <li>
+                      <div class="col s3">
+                        <div class="card">
+                          <div class="card-image">
+                              <img src="{{ integrante.imagen }}">
+                          </div>
+                          <div class="card-content">
+                              <span class="card-title">{{ integrante.nombre }}</span>
+                              <p>{{ integrante.ocupacion }}</p>
+                          </div>
+                        </div>
+                      </div>
+                  </li>
+              </ul>
+           {% endfor %}
+           </div>
+        </div>
+       </div>
+ </div>
+
+{% endblock content %}

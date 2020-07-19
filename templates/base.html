@@ -1,14 +1,77 @@
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taubrix</title>
 
-    <!-- LLAMO A MATERIALIZE -->
+    <!-- Para llamar al CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'taubrix/style.css' %}">
 
-    <!-- fin -->
+        <!-- LLAMO A MATERIALIZE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 <body>
-    <h1>INICIO</h1>
+    <nav class="white" role="navigation" style="height:110px;">
+        <div class="nav-wrapper container">
+          <a id="logo-container" href="/" class="brand-logo" style="color:#444;">
+              <img src="{% static 'taubrix/imagenes/taubrixLogo.jpg' %}" width="110" height="110" >
+          </a>
+          <ul class="right hide-on-med-and-down" style=" padding-top: 20px;">
+            <li><a href="{% url 'servicios' %}" class="nav-texto">Servicios</a></li>
+            <li><a href="{% url 'empresa' %}" class="nav-texto">Empresa</a></li>
+            <li><a href="{% url 'contacto' %}" class="nav-texto">Contacto</a></li>
+          </ul>
+
+          <ul id="nav-mobile" class="sidenav">
+            <li><a href="{% url 'servicios' %}" class="nav-texto">Servicios Link</a></li>
+            <li><a href="{% url 'empresa' %}" class="nav-texto">Empresa</a></li>
+            <li><a href="{% url 'contacto' %}" class="nav-texto">Contacto</a></li>
+          </ul>
+          <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+    {% block content %}
+
+    {% endblock content %}
+
+  <footer class="page-footer teal">
+
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Acerca de nosotros</h5>
+          <p class="grey-text text-lighten-4">Somos un grupo de gatos .</p>
+        </div>
+        <div class="col l3 s12">
+        </div>
+
+        <div class="col l3 s12">
+          <h5 class="white-text">Contacto</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Mail</a></li>
+            <li><a class="white-text" href="https://www.facebook.com/taubrix" target="_blank">Facebook</a></li>
+            <li><a class="white-text" href="https://www.instagram.com/taubrix/?hl=es-la" target="_blank">Instagram</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      <div class="container">
+        Copyright 2020
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'taubrix/js/materialize.js' %}"></script>
+  <script src="{% static 'taubrix/js/init.js' %}"></script>
+
 </body>
+</html>

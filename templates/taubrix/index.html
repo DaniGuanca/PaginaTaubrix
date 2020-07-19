@@ -1,10 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Taubrix</title>
-</head>
-<body>
-    <h1>INICIO</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">{{ lista_textos.0.contenido }}</h1>
+        <div class="row center">
+          {{ lista_imagenes.0.nombre }}
+          <h5 class="header col s12 light">{{ lista_textos.1.contenido }}</h5>
+        </div>
+        <br><br>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static 'taubrix/imagenes/background9.jpeg' %}" alt="Unsplashed background img 1"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <!--   ICONOS CON TEXTO   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">{{ lista_textos.5.contenido }}</h5>
+
+            <p class="light">{{ lista_textos.2.contenido }}</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">devices</i></h2>
+            <h5 class="center">{{ lista_textos.6.contenido }}</h5>
+
+            <p class="light">{{ lista_textos.3.contenido }}</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">{{ lista_textos.7.contenido }}</h5>
+
+            <p class="light">{{ lista_textos.4.contenido }}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- IMAGEN DEL MEDIO -->
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">{{ lista_textos.8.contenido }}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static 'taubrix/imagenes/background1.jpeg' %}" alt="Unsplashed background img 2"></div>
+  </div>
+
+
+ <!-- TEXTO OTRO TRABAJO -->
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>{{ lista_textos.10.contenido }}</h4>
+          <p class="left-align light">{{ lista_textos.11.contenido }}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+ <!-- IMAGEN DE ABAJO -->
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">{{ lista_textos.9.contenido }}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static 'taubrix/imagenes/background2.jpeg' %}" alt="Unsplashed background img 3"></div>
+  </div>
+
+
+
+
+{% endblock content %}

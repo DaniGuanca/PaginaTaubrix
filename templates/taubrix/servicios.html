@@ -1,10 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2"><p  style="color:#E1E8FE">{{ lista_textos.6.contenido }}</p></h1>
+        <div class="row center">
+          <h5 class="header col s12 light">{{ lista_textos.7.contenido }}</h5>
+        </div>
+        <br><br>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static 'taubrix/imagenes/background8.jpg' %}" alt="Unsplashed background img 1"></div>
+  </div>
 
-</body>
-</html>
+  <div class="container">
+    <div class="section">
+
+      <!--   ICONOS CON TEXTO   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">{{ lista_textos.3.contenido }}</h5>
+
+            <p class="light">{{ lista_textos.0.contenido }}</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">devices</i></h2>
+            <h5 class="center">{{ lista_textos.4.contenido }}</h5>
+
+            <p class="light">{{ lista_textos.1.contenido }}</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">{{ lista_textos.5.contenido }}</h5>
+
+            <p class="light">{{ lista_textos.2.contenido }}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    <!-- IMAGEN DEL MEDIO -->
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">{{ lista_textos.8.contenido }}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static 'taubrix/imagenes/background3.jpg' %}" alt="Unsplashed background img 2"></div>
+  </div>
+
+{% endblock content %}
