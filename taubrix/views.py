@@ -53,28 +53,35 @@ class Contacto(generic.ListView):
 
     def post(self, request, *args, **kwargs):
         nombre = request.POST.get("nombre")
+        apellido = request.POST.get("apellido")
+        asunto = request.POST.get("asunto")
         email = request.POST.get("email")
         mensaje = request.POST.get("mensaje")
 
-        body = render_to_string(
-            'taubrix/contenido_email.html', {
-                'nombre': nombre,
-                'email': email,
-                'mensaje': mensaje,
-            },
-        )
+        if (not nombre.strip()) or (not apellido.strip()) or (not asunto.strip()) or (not email.strip()) or (not mensaje.strip()):
+            messages.error(request, 'Complete todos los campos')
+        else:
 
-        mensaje_email = EmailMessage(
-            subject="ASUNTO",
-            body=body,
-            from_email=email,
-            to=['dany12rp13@gmail.com'],
-        )
-        mensaje_email.content_subtype = 'html'
+            body = render_to_string(
+                'taubrix/contenido_email.html', {
+                    'nombre': nombre,
+                    'apellido' : apellido,
+                    'email': email,
+                    'mensaje': mensaje,
+                },
+            )
 
-        try:
-            mensaje_email.send()
-            messages.success(request, 'Correo enviado con éxito.')
-        except Exception as e:
-            messages.error(request, 'Ocurrió un error al enviar el correo.')
+            mensaje_email = EmailMessage(
+                subject=asunto,
+                body=body,
+                from_email=email,
+                to=['taubrix.arg@gmail.com'],
+            )
+            mensaje_email.content_subtype = 'html'
+
+            try:
+                mensaje_email.send()
+                messages.success(request, 'Correo enviado con éxito.')
+            except Exception as e:
+                messages.error(request, 'Ocurrió un error al enviar el correo.')
         return redirect('contacto')
