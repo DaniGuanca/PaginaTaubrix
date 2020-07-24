@@ -13,7 +13,7 @@ class Texto(models.Model):
 class Integrante(models.Model):
     nombre = models.CharField(max_length=100)
     ocupacion = models.CharField(max_length=200)
-    imagen = models.ImageField(upload_to='taubrix/static/taubrix/imagenes', default='static/taubrix/imagenes/no-img.jpg')
+    imagen = models.ImageField(upload_to='static/taubrix/imagenes', default='static/taubrix/imagenes/no-img.jpg')
 
     def __str__(self):
         return self.nombre
@@ -21,7 +21,7 @@ class Integrante(models.Model):
 
 class Imagen(models.Model):
     nombre = models.CharField(max_length=100)
-    imagen = models.ImageField(upload_to='taubrix/static/taubrix/imagenes', default='static/taubrix/imagenes/no-img.jpg')
+    imagen = models.ImageField(upload_to='static/taubrix/imagenes', default='static/taubrix/imagenes/no-img.jpg')
 
     def __str__(self):
         return self.nombre
