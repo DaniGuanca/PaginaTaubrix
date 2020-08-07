@@ -1,7 +1,8 @@
-.nav-texto{
- font-size: 20px;
- color:#444;
+.nav-texto {
+  font-size: 20px;
+  color: #444;
 }
+
 p {
   line-height: 2rem;
 }
@@ -14,17 +15,19 @@ p {
   min-height: 380px;
   line-height: 0;
   height: auto;
-  color: rgba(255,255,255,.9);
+  color: rgba(255, 255, 255, .9);
 }
-  .parallax-container .section {
-    width: 100%;
-  }
+
+.parallax-container .section {
+  width: 100%;
+}
 
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: absolute;
     top: 40%;
   }
+
   #index-banner .section {
     top: 10%;
   }
@@ -39,6 +42,7 @@ p {
 .icon-block {
   padding: 0 15px;
 }
+
 .icon-block .material-icons {
   font-size: inherit;
 }
@@ -47,23 +51,28 @@ footer.page-footer {
   margin: 0;
 }
 
-body{
-    background: #ECE9E6;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+body {
+  background: #ECE9E6;
+  /* fallback for old browsers */
+  background: linear-gradient(to bottom, #FFFFFF, #ECE9E6);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #FFFFFF, #ECE9E6);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.nav-wrapper{
-    margin-left:20px;
-    margin-right:20px;
+.nav-wrapper {
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .card {
-    height: 400px; /* Your height here */
-    overflow: hidden;
+  height: 400px;
+  /* Your height here */
+  overflow: hidden;
 }
 
 .card-image {
-    height: 250px; /* Your height here */
-    overflow: hidden;
+  height: 250px;
+  /* Your height here */
+  overflow: hidden;
 }

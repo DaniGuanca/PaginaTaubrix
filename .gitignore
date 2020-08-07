@@ -166,3 +166,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+staticfiles/
+.scannerwork

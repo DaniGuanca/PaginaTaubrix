@@ -65,7 +65,7 @@ class Contacto(generic.ListView):
             body = render_to_string(
                 'taubrix/contenido_email.html', {
                     'nombre': nombre,
-                    'apellido' : apellido,
+                    'apellido': apellido,
                     'email': email,
                     'mensaje': mensaje,
                 },
@@ -82,6 +82,7 @@ class Contacto(generic.ListView):
             try:
                 mensaje_email.send()
                 messages.success(request, 'Correo enviado con éxito.')
-            except Exception as e:
-                messages.error(request, 'Ocurrió un error al enviar el correo.')
+            except Exception:
+                messages.error(
+                    request, 'Ocurrió un error al enviar el correo.')
         return redirect('contacto')
