@@ -1,43 +1,46 @@
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Taubrix</title>
+  <meta charset="UTF-8">
+  <title>Taubrix</title>
 
-    <!-- Para llamar al CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'taubrix/style.css' %}">
+  <!-- Para llamar al CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'taubrix/style.css' %}">
 
-        <!-- LLAMO A MATERIALIZE -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- LLAMO A MATERIALIZE -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- pestaña -->
-    <link rel="shortcut icon" href="{% static 'taubrix/imagenes/logopestaña.ico' %}">
+  <!-- pestaña -->
+  <link rel="shortcut icon" href="{% static 'taubrix/imagenes/logopestaña.ico' %}">
 </head>
+
 <body>
-    <nav class="white" role="navigation" style="height:110px;">
-        <div class="nav-wrapper container">
-          <a id="logo-container" href="/" class="brand-logo" style="color:#444;">
-              <img src="{% static 'taubrix/imagenes/taubrixLogo.jpg' %}" width="110" height="110" >
-          </a>
-          <ul class="right hide-on-med-and-down" style=" padding-top: 20px;">
-            <li><a href="{% url 'servicios' %}" class="nav-texto">Servicios</a></li>
-            <li><a href="{% url 'empresa' %}" class="nav-texto">Empresa</a></li>
-            <li><a href="{% url 'contacto' %}" class="nav-texto">Contacto</a></li>
-          </ul>
+  <nav class="white" role="navigation" style="height:110px;">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="/" class="brand-logo" style="color:#444;">
+        <img src="{% static 'taubrix/imagenes/taubrixLogo.jpg' %}" width="110" height="110" alt="Taubrix Logo">
+      </a>
+      <ul class="right hide-on-med-and-down" style=" padding-top: 20px;">
+        <li><a href="{% url 'servicios' %}" class="nav-texto">Servicios</a></li>
+        <li><a href="{% url 'empresa' %}" class="nav-texto">Empresa</a></li>
+        <li><a href="{% url 'contacto' %}" class="nav-texto">Contacto</a></li>
+      </ul>
 
-          <ul id="nav-mobile" class="sidenav">
-            <li><a href="{% url 'servicios' %}" class="nav-texto">Servicios Link</a></li>
-            <li><a href="{% url 'empresa' %}" class="nav-texto">Empresa</a></li>
-            <li><a href="{% url 'contacto' %}" class="nav-texto">Contacto</a></li>
-          </ul>
-          <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        </div>
-    </nav>
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="{% url 'servicios' %}" class="nav-texto">Servicios Link</a></li>
+        <li><a href="{% url 'empresa' %}" class="nav-texto">Empresa</a></li>
+        <li><a href="{% url 'contacto' %}" class="nav-texto">Contacto</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><em class="material-icons">menu</em></a>
+    </div>
+  </nav>
 
-    {% block content %}
+  {% block content %}
 
-    {% endblock content %}
+  {% endblock content %}
 
   <footer class="page-footer teal">
 
@@ -54,8 +57,11 @@
           <h5 class="white-text">Contacto</h5>
           <ul>
             <li><a class="white-text" href="#!">Mail</a></li>
-            <li><a class="white-text" href="https://www.facebook.com/taubrix" target="_blank">Facebook</a></li>
-            <li><a class="white-text" href="https://www.instagram.com/taubrix/?hl=es-la" target="_blank">Instagram</a></li>
+            <li><a class="white-text" href="https://www.facebook.com/taubrix" target="_blank"
+                rel="noopener noreferrer">Facebook</a></li>
+            <li><a class="white-text" href="https://www.instagram.com/taubrix/?hl=es-la" target="_blank"
+                rel="noopener noreferrer">Instagram</a>
+            </li>
           </ul>
         </div>
 
@@ -76,4 +82,5 @@
   <script src="{% static 'taubrix/js/init.js' %}"></script>
 
 </body>
+
 </html>
